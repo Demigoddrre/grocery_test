@@ -1,4 +1,3 @@
-Here's a set of SQL practice problems covering different topics. You can save these in a `problems.md` file.
 
 ---
 
