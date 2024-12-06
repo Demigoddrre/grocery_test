@@ -31,7 +31,7 @@ The project provides a SQLite database (`grocery_store.db`) preloaded with sampl
    ```
 2. Output:
    ```
-   Customers  OrderDetails  Orders  Products
+   Customers  OrderDetails  Orders  Products  Suppliers
    ```
 
 ---
@@ -50,6 +50,10 @@ Use SQL commands to interact with the database.
 - **Example 3:** Find orders with a total amount greater than $6.
   ```sql
   SELECT * FROM Orders WHERE TotalAmount > 6;
+  ```
+- **Example 4:** View all suppliers.
+  ```sql
+  SELECT * FROM Suppliers;
   ```
 
 ---
@@ -81,6 +85,7 @@ queries = [
     "SELECT * FROM Products;",
     "SELECT * FROM Orders WHERE TotalAmount > 6;",
     "SELECT Name, Category, Price FROM Products WHERE Stock > 50;",
+    "SELECT * FROM Suppliers;",
     """
     SELECT C.Name AS Customer, O.OrderDate, O.TotalAmount
     FROM Customers C
@@ -142,6 +147,11 @@ This project uses the following schema:
    - `ProductID`: Reference to the `ProductID` in the `Products` table.
    - `Quantity`: Quantity of the product in the order.
    - `Price`: Price of the product at the time of the order.
+
+5. **Suppliers Table**:
+   - `SupplierID`: Unique identifier for each supplier.
+   - `SupplierName`: Name of the supplier.
+   - `ContactInfo`: Contact information for the supplier.
 
 ---
 
