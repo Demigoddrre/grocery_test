@@ -8,10 +8,11 @@ cursor = conn.cursor()
 queries = [
     "SELECT * FROM Customers;",
     "SELECT * FROM Products;",
+    "SELECT * FROM Suppliers;",
     "SELECT * FROM Orders WHERE TotalAmount > 6;",
-    "SELECT Name, Category, Price FROM Products WHERE Stock > 50;",
+    "SELECT ProductName, Category, Price FROM Products WHERE StockQuantity > 50;",
     """
-    SELECT C.Name AS Customer, O.OrderDate, O.TotalAmount
+    SELECT C.FirstName || ' ' || C.LastName AS Customer, O.OrderDate, O.TotalAmount
     FROM Customers C
     INNER JOIN Orders O ON C.CustomerID = O.CustomerID
     WHERE O.TotalAmount > 5;
